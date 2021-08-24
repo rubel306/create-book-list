@@ -7,7 +7,8 @@ const bookWrap = document.querySelector('#tbody');
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    //basic validation for not empty value 
+    //basic validation for not empty value
+    
     if(title.value == ''){
         alert("please Provide Book Title");
     } else if(author.value == ''){
@@ -16,12 +17,10 @@ form.addEventListener('submit', function(e){
         alert("Please provide book published year. ")
     }else{
         const bookRow = document.createElement('tr');
-        
-        
-        //add title 
+        //add book title
         const bookTitle = document.createElement('td');
         bookTitle.innerHTML = title.value;
-        bookRow.appendChild(bookTitle);
+        var finalBook = bookRow.appendChild(bookTitle);
 
         //add author
         const bookAuthor = document.createElement('td');
@@ -36,5 +35,8 @@ form.addEventListener('submit', function(e){
         //bookRow append with his parent 
         bookWrap.appendChild(bookRow);
 
+
     }
-})
+
+});
+
